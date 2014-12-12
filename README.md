@@ -1,2 +1,2 @@
-docker-foswiki
+docker-XWiki
 ==============
