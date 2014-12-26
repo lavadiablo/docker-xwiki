@@ -25,6 +25,7 @@ VOLUME /usr/share/tomcat7/logs
 
 #Config
 COPY ./conf/hibernate.cfg.xml /var/lib/tomcat7/webapps/xwiki/WEB-INF/hibernate.cfg.xml
+COPY ./conf/context.xml /etc/tomcat7/context.xml
 RUN echo "environment.permanentDirectory=/var/local/xwiki/" >> /var/lib/tomcat7/webapps/xwiki/WEB-INF/xwiki.properties
 
 
