@@ -3,11 +3,11 @@ docker-xwiki
 
 This xwiki image is working with the postgres. 
 
-start.sh can be found in https://github.com/lavadiablo/docker-xwiki/blob/master/start.sh
-You may need extra configuration in start.sh to change volume and port settings.
+docker-compose.yml can be found in https://github.com/lavadiablo/docker-xwiki/blob/master/docker-compose.yml
 
-1. docker pull postgres:latest
-2. docker pull lavadiablo\docker-xwiki
-3. ./start.sh
+1. execute "docker pull postgres:latest"
+2. execute "docker pull lavadiablo\docker-xwiki:latest"
+3. modify the docker-compose.yml for your setting
+4. execute "docker-compose up -d"
 
 
