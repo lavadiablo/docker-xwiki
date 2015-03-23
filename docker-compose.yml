@@ -1,0 +1,15 @@
+xwiki:
+  image: lavadiablo/docker-xwiki:6.4.3
+  links:
+   - xwikidb
+  ports:
+   - "8082:8080"
+  volumes:
+   - /usr/share/docker/persistance/xwiki6.4.3/files:/var/local/xwiki
+xwikidb:
+  image: postgres
+  volumes:
+   - /usr/share/docker/persistance/xwiki6.4.3/db:/var/lib/postgresql/data
+  environment:
+   - POSTGRES_USER=xwiki
+   - POSTGRES_PASSWORD=xwik
