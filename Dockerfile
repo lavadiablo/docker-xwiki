@@ -20,10 +20,13 @@ VOLUME /usr/share/tomcat7/logs
 RUN wget http://jdbc.postgresql.org/download/postgresql-9.3-1102.jdbc4.jar -P /var/lib/tomcat7/webapps/xwiki/WEB-INF/lib/
 
 #Download WAR from xwiki
-ENV CUR_VER 6.4.3
-RUN wget "http://download.forge.ow2.org/xwiki/xwiki-enterprise-web-${CUR_VER}.war" -P /var/lib/tomcat7/webapps
-RUN unzip "/var/lib/tomcat7/webapps/xwiki-enterprise-web-${CUR_VER}.war" -d /var/lib/tomcat7/webapps/xwiki
-RUN rm "/var/lib/tomcat7/webapps/xwiki-enterprise-web-${CUR_VER}.war"
+RUN apt-get -y --force-yes install curl
+RUN curl -o xwikiDownloadPage.html http://download.forge.ow2.org/xwiki/
+ADD versionPicker.py .
+RUN apt-get -y --force-yes install python
+RUN python versionPicker.py >> downloader.sh
+RUN chmod +x downloader.sh
+RUN sh downloader.sh
 
 #Install LibreOffice
 RUN apt-get -y --force-yes install libreoffice 
