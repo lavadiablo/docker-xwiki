@@ -21,7 +21,7 @@ RUN wget http://jdbc.postgresql.org/download/postgresql-9.3-1102.jdbc4.jar -P /v
 
 #Download WAR from xwiki
 RUN apt-get -y --force-yes install curl
-RUN curl -o xwikiDownloadPage.html http://download.forge.ow2.org/xwiki/
+RUN "curl -o xwikiDownloadPage.html http://download.forge.ow2.org/xwiki/"
 ADD versionPicker.py .
 RUN apt-get -y --force-yes install python
 RUN python versionPicker.py >> downloader.sh
