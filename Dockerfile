@@ -18,7 +18,6 @@ VOLUME /usr/share/tomcat7/logs
 RUN wget http://jdbc.postgresql.org/download/postgresql-9.3-1102.jdbc4.jar -P /var/lib/tomcat7/webapps/xwiki/WEB-INF/lib/
 
 #Download WAR from xwiki
-RUN \curl -o xwikiDownloadPage.html http://download.forge.ow2.org/xwiki/
 RUN \curl -o xwikiVersion.html http://www.xwiki.org/xwiki/bin/view/Download/
 ADD versionPicker.py .
 RUN python versionPicker.py >> downloader.sh
