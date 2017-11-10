@@ -1,3 +1,10 @@
+Due to offical docker build is well supported. End this project.
+https://github.com/xwiki-contrib/docker-xwiki
+
+
+
+
+
 docker-xwiki
 ==============
 
